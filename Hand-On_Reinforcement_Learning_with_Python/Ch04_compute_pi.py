@@ -8,7 +8,7 @@ square_size = 1
 points_inside_circle = 0
 points_inside_square = 0
 sample_size = 1000
-arc = np.linspace(0, np.pi/2, 100)
+arc = np.linspace(0, np.pi/2, 100) # 把 0 到 90 度 (pi/2) 分成 100 個點
 
 def generate_points(size):
     x = random.random() * size
@@ -26,7 +26,7 @@ def compute_pi(points_inside_circle, points_inside_square):
     return 4 * (points_inside_circle / points_inside_square)
 
 plt.axes().set_aspect("equal")
-plt.plot(1 * np.cos(arc), 1 * np.sin(arc))
+plt.plot(1 * np.cos(arc), 1 * np.sin(arc)) # 半徑是 r, 則 x = r cos\theta, y = r sin\theta
 
 for i in range(sample_size):
     point = generate_points(square_size)
