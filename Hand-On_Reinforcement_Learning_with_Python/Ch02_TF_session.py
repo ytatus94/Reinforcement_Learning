@@ -28,5 +28,5 @@ a = tf.multiply(2, 3)
 print(a)
 
 with tf.Session() as sess:
-  # 執行 session
-  print(sess.run(a))
+    # 執行 session
+    print(sess.run(a))
