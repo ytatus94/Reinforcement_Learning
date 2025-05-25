@@ -37,4 +37,4 @@ for i in range(sample_size):
     if is_in_circle(point, square_size):
         points_inside_circle += 1
 
-print("Approximate value of pi is {}".format(calculate_pi(points_inside_circle, points_inside_square)))
+print("Approximate value of pi is {}".format(compute_pi(points_inside_circle, points_inside_square)))
