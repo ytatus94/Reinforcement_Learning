@@ -9,6 +9,7 @@ f = tf.multiply(d, e)
 g = tf.add(c, f)
 
 with tf.Session() as sess:
+    # 把運算圖寫入到 output 中
     writer = tf.summary.FileWriter("output", sess.graph)
     print(sess.run(g))
     writer.close()
