@@ -15,7 +15,7 @@ epsilon = 0.017 # probability for epsilon greedy
 Q = {}
 for s in range(env.observation_space.n):
     for a in range(env.action_space.n):
-        Q[(s, a)] = 0
+        Q[(s, a)] = 0.0
 
 def update_q_table(prev_state, action, reward, next_state, alpha, gamma):
     Q_max = max([Q[next_state, a] for a in range(env.action_space.n)])
