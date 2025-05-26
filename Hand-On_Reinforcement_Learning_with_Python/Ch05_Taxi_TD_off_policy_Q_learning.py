@@ -12,20 +12,22 @@ gamma = 0.999 # discount factor
 epsilon = 0.017 # probability for epsilon greedy
 
 # 初始化 Q table
-q = {}
+Q = {}
 for s in range(env.observation_space.n):
     for a in range(env.action_space.n):
-        q[(s, a)] = 0
+        Q[(s, a)] = 0
 
 def update_q_table(prev_state, action, reward, next_state, alpha, gamma):
-    qa = max([q[next_state, a] for a in range(env.action_space.n)])
-    q[(prev_state, a)] += alpha * (reward + gamma * qa - q[(prev_state, action)])
+    Q_max = max([Q[next_state, a] for a in range(env.action_space.n)])
+    Q[(prev_state, a)] += alpha * (reward + gamma * Q_max - Q[(prev_state, action)])
 
+# epsilon greedy
 def epslion_greedy_policy(state, epsilon):
     if random.uniform(0, 1) < epsilon:
         return env.action_space.sample()
     else:
-        retrun max(list(env.action_space.n), key=lambda x: q[(state, x)])
+        # 根據 Q(s, a) 來選取最大的 action
+        retrun max(list(env.action_space.n), key=lambda x: Q[(state, x)])
 
 for i in range(8000):
     r = 0
