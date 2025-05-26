@@ -59,7 +59,7 @@
         * On policy: $\epsilon$ greedy
             * 用 exploration-exploitation, 當機率比 $\epsilon$ 小的時候就用隨機動作 (exploration), 當機率比 $\epsilon$ 大時就用最佳動作 (exploitation)
         * Off policy: 用兩個 policies: bahavior policy $\mu$ 和 target policy $\pi$
-            * 利用 important sampling 來做加權 
+            * $\mu$ 和 $\pi$ 之間有一個比例關係, 利用 important sampling 來做加權 
 * Temporal difference (TD)
     * TD prediction
         * $V(s) = V(s) + \alpha [r + \gamma V(s') - V(s)]$
