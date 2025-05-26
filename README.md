@@ -79,7 +79,7 @@
 ----
 
 ## Hand-on Reinforcement Learning with Python
-* [https://github.com/PacktPublishing/Hands-On-Reinforcement-Learning-with-Python](Book's repos)
+* [Book's repos](https://github.com/PacktPublishing/Hands-On-Reinforcement-Learning-with-Python)
 ## Deep Reinforcement Learning with Python
 * Book's repos:
 ## Deep Reinforcement Learning Hands-On
