@@ -47,7 +47,7 @@
     * $0 (永不學習, 只考慮當下獎勵) \le \gamma \le 1 (持續學習, 尋找未來獎勵)$
     * 通常用 $0.2 \le \gamma \le 0.8$
 * Return 是 agent 收到的總獎勵, i.e. return = sum of rewards
-    * $R_{t} =  = \sum_{i=t+1}^{N} r_{i} = r_{t+1} + r_{t+2} + r_{t+3} + \cdots + r_{N}$
+    * $R_{t} = \sum_{i=t+1}^{N} r_{i} = r_{t+1} + r_{t+2} + r_{t+3} + \cdots + r_{N}$
     * 當連續行任務的時候，不會有最終狀態，所以要加入 discount factor $\gamma$: $R_t = \sum_{k}^{\infty} \gamma^{k} r_{t+k+1} = r_{t+1} + \gamma r_{t+2} + \gamma^2 r_{t+3} + \gamma^3 r_{t+4} + \cdots$
 * Dynamic programming
     * 都是藉由計算 $Q(s, a)$ 來更新 value function 或 policy 
