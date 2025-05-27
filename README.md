@@ -34,11 +34,15 @@
         * 需要知道 model dynamics, i.e. transition probability
         * 轉移機率 transition probability $P_{ss'}^{a}$
         * 獎勵機率 reward probability $R_{ss'}^{a}$
+        * 例如看地圖，選擇走最快的路線
     * Model-free:
         * 不知道 model dynamics
+        * 例如不看地圖，而是嘗試所有路線後選擇最快的一條
      
-* Markov property: 未來只與現在有關，與過去無關
-* Markov Decision Process (MDP): 所有 RL 都是 MDP
+* Markov
+    * Markov property: 未來只與現在有關，與過去無關
+    * Markov chain: 是機率模型，根據當下狀態去預測下一個狀態，和過去狀態無關
+    * Markov Decision Process (MDP): 所有 RL 都可以用 MDP 來表示
 * Discount factor $\gamma$ 
     * $0 (永不學習, 只考慮當下獎勵) \le \gamma \le 1 (持續學習, 尋找未來獎勵)$
     * 通常用 $0.2 \le \gamma \le 0.8$
