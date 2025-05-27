@@ -51,10 +51,14 @@
     * 當連續行任務的時候，不會有最終狀態，所以要加入 discount factor $\gamma$: $R_t = \sum_{k}^{\infty} \gamma^{k} r_{t+k+1} = r_{t+1} + \gamma r_{t+2} + \gamma^2 r_{t+3} + \gamma^3 r_{t+4} + \cdots$
 * Dynamic programming
     * 都是藉由計算 $Q(s, a)$ 來更新 value function 或 policy 
-    * Value iteration: 一直用 $V^{＊}(s) = \max_{a} Q^{＊}(s, a)$ 直到 $V(s)$ 的變動很小為止
+    * Value iteration
+        * 一直用 $V^{＊}(s) = \max_{a} Q^{＊}(s, a)$ 直到 $V(s)$ 的變動很小為止
+        * 初始化隨機 $V(s) \rightarrow$ 計算 $Q(s, a) \rightarrow$ 使用最大的 $Q(s, a)$ 來更新 $V(s) \rightarrow$ 一直到 $V(s)$ 的變化很小為止 
     * Policy iteration
         * Policy evaluation
-        * Policy improvement: 用 $Q(s, a)$ 抽出 policy
+            * 初始化隨機 $\pi \rightarrow$ 計算 $V(s)$
+        * Policy improvement
+            * 用 $Q(s, a)$ 抽出 policy $\rightarrow$ 抽出來的 policy 是否和舊的 policy 一樣, 如果一樣就是收斂了, 如果不一樣就用新的 policy 繼續做 policy evaluation
 * Monte Carlo
     * Monte Carlo prediction
         * First visit: 只有第一次訪問該狀態的時候才要計算平均回報
