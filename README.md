@@ -34,10 +34,10 @@
         * 需要知道 model dynamics, i.e. transition probability
         * 轉移機率 transition probability $P_{ss'}^{a}$
         * 獎勵機率 reward probability $R_{ss'}^{a}$
-        * 例如看地圖，選擇走最快的路線
+        * 例如: 看地圖，選擇走最快的路線
     * Model-free:
         * 不知道 model dynamics
-        * 例如不看地圖，而是嘗試所有路線後選擇最快的一條
+        * 例如: 不看地圖，而是嘗試所有路線後選擇最快的一條
      
 * Markov
     * Markov property: 未來只與現在有關，與過去無關
