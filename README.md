@@ -14,8 +14,8 @@
   
 * Policy $\pi$:
     * 定義了 agent 在環境中的行為規範
-    * Deterministic: $\pi(s) = a$
-    * Stochastic: $\pi(a|s) = 某機率$ 
+    * Deterministic: $\pi(s) = a$ 給定狀態就會執行固定動作
+    * Stochastic: $\pi(a|s) = 某機率$ 給定狀態後有一定的機率去執行某動作
 * Value function $V(s)$:
     * 又叫做 state-value function, 用來判斷 agent 在某個狀態 $s$ 有多好
     * 等於 agent 從 $s$ 狀態開始到結束收到的總獎勵的期望值
