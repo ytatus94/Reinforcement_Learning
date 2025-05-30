@@ -53,12 +53,16 @@
     * 都是藉由計算 $Q(s, a)$ 來更新 value function 或 policy 
     * Value iteration
         * 一直用 $V^{＊}(s) = \max_{a} Q^{＊}(s, a)$ 直到 $V(s)$ 的變動很小為止
-        * 初始化隨機 $V(s) \rightarrow$ 計算 $Q(s, a) \rightarrow$ 使用最大的 $Q(s, a)$ 來更新 $V(s) \rightarrow$ 一直到 $V(s)$ 的變化很小為止 
+        * 初始化隨機 $V(s) \rightarrow$ 計算 $Q(s, a) \rightarrow$ 使用最大的 $Q(s, a)$ 來更新 $V(s) \rightarrow$ 一直到 $V(s)$ 的變化很小為止
+        * 用 $V$ 計算所有 action 的 $Q$, 再從所有 $Q$ 中找出最大的值當作下一輪的 $V$, 重複這樣的循環直到 $V$ 不再改變或改變得很小，此時的 $V$ 就是 optimal $V$. 用 optimal $V$ 計算所有 action 的 $Q$, 再從所有 $Q$ 中最大的 $Q$, 此時對應到的 action 就是最佳的 policy
+            * value iteration 是一直循環計算 $Q$ 來更新 $V$ 直到找到 optimal $V$, 然後用 optimal $V$ 來找算 $Q$ 抽出 optimal policy
     * Policy iteration
         * Policy evaluation
             * 初始化隨機 $\pi \rightarrow$ 計算 $V(s)$
         * Policy improvement
             * 用 $Q(s, a)$ 抽出 policy $\rightarrow$ 抽出來的 policy 是否和舊的 policy 一樣, 如果一樣就是收斂了, 如果不一樣就用新的 policy 繼續做 policy evaluation
+        * 用給定的 policy 與初始的 $V$ 計算新的 $V$, 把新的 $V $當作下一輪初始的 $V$ 再繼續計算 $V$ 直到 $V$ 不再改變或改變得很小，此時就是 optimal $V$, 用 optimal $V$ 計算所有 action 的 $Q$, 找出最大的 $Q$ 對應到的 action, 就是新的 policy. 比較新舊兩個 policy 是否相同，如果不同那就用新的 policy 和最新的 $V$ 來重複下一個循環的計算，直到新舊兩個 policy 相同，此時的 policy 就是最佳 policy
+            * policy iteration 是一直循環計算 $V$ 來找出新的 policy (一樣是用 $Q$ 來抽出 policy), 直到 policy 不再改變時就是 optimal policy
 * Monte Carlo
     * Monte Carlo prediction
         * First visit: 只有第一次訪問該狀態的時候才要計算平均回報
