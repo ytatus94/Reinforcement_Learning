@@ -31,6 +31,7 @@ Q = np.zeros(10)
 def softmax(tau):
     total = sum([math.exp(val / tau) for val in Q])
     probs = [math.exp(val / tau) / total for val in Q]
+    
     threshold = random.random()
     cumulative_prob = 0.0
 
@@ -43,8 +44,8 @@ def softmax(tau):
 
 # 開始拉手臂
 for i in range(num_rounds):
-    # 用 epsilon greedy policy 來決定要拉哪一隻手臂
-    arm = epsilon_greedy(0.5)
+    # 用 softmax exploration 來決定要拉哪一隻手臂
+    arm = softmax(0.5)
     observation, reward, done, info = env.step(arm)
     # 手臂被拉過就計數一次
     count[arm] += 1
