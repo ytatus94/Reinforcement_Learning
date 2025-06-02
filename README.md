@@ -94,10 +94,10 @@
         * Optimal $Q = Q(a^{*}) = \max Q(a)$
     * 可用的方法
     * Epsilon greedy
-    * 選擇每一隻手臂的機率都是均等的
+        * 選擇每一隻手臂的機率都是均等的
     * Softmax exploration
-    * 選擇每一隻手臂的機率是依照 Boltzmann 機率分配來選擇, 所以又叫做 Boltzmann exploration
-    * UBC
+        * 選擇每一隻手臂的機率是依照 Boltzmann 機率分配來選擇, 所以又叫做 Boltzmann exploration
+    * 信賴區間上限 Upper Confidence Bound (UCB)
     * Thompson sampling
 
 ----
