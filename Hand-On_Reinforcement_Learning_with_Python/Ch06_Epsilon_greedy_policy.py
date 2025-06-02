@@ -14,8 +14,6 @@ env = gym.make("BanditTenArmedGaussian-v0")
 
 print(env.action_space)
 
-# Epsilon greedy policy
-
 # 回合次數 (遞迴)
 num_rounds = 20000
 
@@ -29,6 +27,7 @@ sum_rewards = np.zeros(10)
 # Q 值, 也就是平均獎勵, 這也是每隻手臂分別計算
 Q = np.zeros(10)
 
+# Epsilon greedy policy
 # 定義函數
 def epsilon_greedy(epsilon):
     rand = np.random.random()
