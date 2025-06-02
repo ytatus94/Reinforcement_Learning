@@ -87,6 +87,18 @@
             * $Q(s,a) = Q(s, a) + \alpha [r + \gamma Q(s', a') - Q(s, a)]$
             * 動作的選擇是用 $\epsilon$ greedy
             * 更新 $Q$ 值的時候用 $\epsilon$ greedy $Q(s', a')$
+* MAB (multi-armed bandit)
+    * MAB 就是拉霸機, 吃角子老虎機
+        * 每一台拉霸機就只有一隻手臂, 所以 K 倍 MAB 其實就是 K 台拉霸機組合在一起
+    * Q = 某一隻手臂的獎勵總和 / 該手臂被拉的次數
+        * Optimal $Q = Q(a^{*}) = \max Q(a)$
+    * 可用的方法
+    * Epsilon greedy
+    * 選擇每一隻手臂的機率都是均等的
+    * Softmax exploration
+    * 選擇每一隻手臂的機率是依照 Boltzmann 機率分配來選擇, 所以又叫做 Boltzmann exploration
+    * UBC
+    * Thompson sampling
 
 ----
 
