@@ -41,10 +41,14 @@ def epsilon_greedy(epsilon):
 
 # 開始拉手臂
 for i in range(num_rounds):
+    # 用 epsilon greedy policy 來決定要拉哪一隻手臂
     arm = epsilon_greedy(0.5)
     observation, reward, done, info = env.step(arm)
+    # 手臂被拉過就計數一次
     count[arm] += 1
+    # 該手臂的獎勵也要累計
     sum_rewards[arm] += reward
+    # 計算該手臂的 Q = 該手臂的總獎勵 / 該手臂被拉過的次數
     Q[arm] = sum_rewards[arm] / count[arm]
 
 print("The optimal arm is {}".format(np.argmax(Q)))
